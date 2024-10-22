@@ -5,9 +5,9 @@ import Bookmark from "./Bookmark";
 const Bookmarks = ({bookmarks, readingTime}) => {
     return (
         
-        <div className="md:1/3 ml-7 bg-gray-400">
+        <div className="md:w-1/3 ml-7 mx-auto bg-gray-400">
             <div>
-            <h3>Reading Time: {readingTime}</h3>
+            <h3 className="text-3xl text-purple-700 pb-14">Reading Time: {readingTime}</h3>
         </div>
             <h2 className="text-3xl">Bookmarked: {bookmarks.length}</h2>
             {
