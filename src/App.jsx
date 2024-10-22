@@ -7,7 +7,8 @@ import { useState } from 'react'
 
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
- 
+  const [readingTime, setReadingTime] = useState(0)
+//  ata time add korar jonno ai useState use kora hoyese
 
 
   const handleBookMark=(blog)=>{
@@ -15,12 +16,18 @@ function App() {
     setBookmarks(newBookmark)
   }
 
+  const handleTime=(time)=>{
+    const newTime = readingTime + time
+    setReadingTime(newTime)
+  }
+
+
   return (
     <>
       <Header></Header>
       <div className='md:flex max-w-7xl mx-auto'>
-      <Blogs handleBookMark={handleBookMark}></Blogs>
-      <Bookmarks bookmarks={bookmarks}></Bookmarks>
+      <Blogs handleBookMark={handleBookMark} handleTime={handleTime}></Blogs>
+      <Bookmarks bookmarks={bookmarks} readingTime={readingTime}></Bookmarks>
       </div>
      
     </>
